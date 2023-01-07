@@ -1,0 +1,11 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - sam build --template-file sam-Template.yaml
+      - sam package --template-file sam-Template.yaml --s3-bucket codebucket6998 --output-template-file outputsamtemplate.yml
+artifacts:
+  type: zip
+  files:
+    - sam-Template.yaml
+    - outputsamtemplate.yml
